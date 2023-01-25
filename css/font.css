@@ -1,7 +1,5 @@
 @font-face {
-    // название шрифта(чтобы не запутаться лучше указать название папки со шрифтом) 
     font-family: "DrukWide"; 
-    // адрес шрифта и тип 
     src: url("\fonts\Druk-Wide-Bold.ttf") format("truetype"); 
     font-style: normal; 
     font-weight: normal; 
