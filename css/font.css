@@ -1,8 +1,5 @@
 @font-face {
     font-family: DrukWide;
     src: url(/fonts/Druk-Wide-Bold.ttf);
-}
-
-.body {
-    font-family: 'DrukWide';
+    font-weight: bold;
 }
