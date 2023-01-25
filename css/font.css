@@ -3,3 +3,7 @@
     src: url(/fonts/Druk-Wide-Bold.ttf);
     font-weight: bold;
 }
+
+.body {
+    font-family: 'DrukWide';
+}
