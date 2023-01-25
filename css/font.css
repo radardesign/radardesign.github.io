@@ -2,7 +2,3 @@
     font-family: "DrukWide"; 
     src: url("\fonts\Druk-Wide-Bold.ttf") format("truetype"); 
     } 
-
-.t-menu__link-item {
-    font-family: 'DrukWide';
-}
