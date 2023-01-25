@@ -4,3 +4,7 @@
     font-style: normal; 
     font-weight: normal; 
     } 
+
+.t-menu__link-item {
+    font-family: 'DrukWide';
+}
