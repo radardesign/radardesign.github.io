@@ -2111,7 +2111,7 @@ textarea.w-select {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  animation: 1s show ease;
+  animation: 5s show ease;
 }
 
 @keyframes show {
