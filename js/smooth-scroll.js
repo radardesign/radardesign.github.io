@@ -1,7 +1,32 @@
 (function() {
-  const SCROLL_TIME = 1000; // время анимации скролла в миллисекундах
-  const SCROLL_EASING = "easeOutQuart"; // функция сглаживания анимации скролла
-  const DELAY_TIME = 50; // задержка перед началом анимации скролла в миллисекундах
+  // Определение операционной системы
+  const isMacOS = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+
+  // Если операционная система - macOS, не запускать скрипт
+  if (isMacOS) {
+    return;
+  }
+
+  let isScriptEnabled = true;
+
+  // Функция для проверки ширины окна и включения/отключения скрипта
+  function checkWindowSize() {
+    if (window.innerWidth < 1024) {
+      isScriptEnabled = false;
+    } else {
+      isScriptEnabled = true;
+    }
+  }
+
+  // Проверяем ширину окна при загрузке страницы
+  checkWindowSize();
+
+  // Проверяем ширину окна при изменении размера
+  window.addEventListener('resize', checkWindowSize);
+
+  const SCROLL_TIME = 1000;
+  const SCROLL_EASING = "easeOutQuart";
+  const DELAY_TIME = 50;
 
   // Определение функции анимации сглаживания
   const easings = {
@@ -37,12 +62,14 @@
 
   // Обработчик события прокрутки колеса мыши
   window.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    const direction = e.deltaY < 0 ? -1 : 1;
-    const target = window.pageYOffset + (window.innerHeight * direction * 0.5);
+    if (isScriptEnabled) {
+      e.preventDefault();
+      const direction = e.deltaY < 0 ? -1 : 1;
+      const target = window.pageYOffset + (window.innerHeight * direction * 0.5);
 
-    setTimeout(() => {
-      smoothScroll(target, SCROLL_TIME, SCROLL_EASING);
-    }, DELAY_TIME);
+      setTimeout(() => {
+        smoothScroll(target, SCROLL_TIME, SCROLL_EASING);
+      }, DELAY_TIME);
+    }
   }, { passive: false });
 })();
